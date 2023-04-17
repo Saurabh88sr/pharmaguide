@@ -8,6 +8,8 @@ import Login from "./Pages/Auth/Login";
 import Signup from "./Pages/Auth/Signup";
 import Dashboard from "./Component/Dashboard";
 import MyList from "./Pages/MyList/MyList";
+import FAQ from "./Pages/FQA/FAQ";
+import QuestionForm from "./Pages/FQA/QuestionForm";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Route  path="/signup" element={<Signup />}></Route>
           <Route  path="/MedicineCompare" element={<MedicineCompare />}></Route>
           <Route  path="/MyList" element={<MyList />}></Route>
+          <Route path="/FAQ" element={<FAQ/>}></Route>
+          <Route path="/QuestionForm" element={<QuestionForm/>}></Route>
+          
 
 
 

@@ -27,7 +27,8 @@ const Dashboard =()=>{
         </div>
         <div className="board-row">
           <Card feature="Drug Identifier " imageSrc="img\syringe.png" src={pill} alt="My Image"/>
-          <Card feature="Question & Answer" imageSrc="img\syringe.png" src={Feedback} alt="My Image" />
+          <a className="nav-link" href='/FAQ'><Card feature="Question & Answer" imageSrc="img\syringe.png" src={Feedback} alt="My Image" /></a>
+          
         </div>
         <div className="board-row">
         <a className="nav-link" href='/MyList'><Card feature="My Medicine List" src={List} alt="My Image" medicines={medicines}/></a>

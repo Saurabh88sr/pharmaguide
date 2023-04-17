@@ -4,14 +4,14 @@ export class News extends Component{
     let {title, description, imagUrl}=this.props;
   return (
     <div>
-      <div className="p-4">
-              <div ClassName="card">
+      <div className="p-4 card">
+              <div ClassName=" p-3 card">
                 <img src={imagUrl} ClassName="card-img-top" alt="..." />
                 <div ClassName="card-body">
                   <h5 ClassName="card-title">{title}</h5>
                   <p ClassName="card-text">{description}</p>
                   <a href="/" ClassName="btn btn-primary">
-                    Go somewhere
+                    Read More
                   </a>
                 </div>
               </div>

@@ -1,21 +1,30 @@
 import { Container, Row, Col } from "react-bootstrap";
 import SearchBar from "../Component/SearchBar";
+import { useState } from "react";
 
 const MedicineCompare = () => {
+  const [input, setInput]= useState("come");
+  
+  if ( input ===setInput){
+    console.log("right");
+  }
 
   return (
     <>
       <SearchBar />
-
+      <h1>My favorite color is {input}!</h1>
+      <button
+        type="button"
+        onClick={() => setInput("blue")}
+      >Blue</button>
+      <input type="text" id="come"  />
       <Container>
         <Row>
-          {/* {this.state.articals.map{(element)=> {console.log(element)}}} */}
-
           <Col>
             <table className="table table-bordered">
               <thead className="headBg">
                 <tr>
-                  <th scope="col">Handle</th>
+                  <th scope="col">{input}</th>
                 </tr>
               </thead>
               <tbody>

@@ -5,9 +5,10 @@ import logo from "../img/logo.svg";
 export default function Header(props) {
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} headBg `}>
+    <>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} headBg sticky-top`}>
       <div className="container-fluid ">
-      <img className='p-2' src={logo}  alt={logo} />        <a className="text-warning navbar-brand" href="/">{props.title}</a>
+              <a className="text-warning navbar-brand" href="/"><img className='p-2' src={logo}  alt={logo} />{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +18,10 @@ export default function Header(props) {
               <a className="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href='/about'>About Us</a>
+              <a className="nav-link text-white" href='/about'>About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href='/Contact'>Contact</a>
             </li>
             {/* <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,7 +42,7 @@ export default function Header(props) {
         </div>
       </div>
     </nav>
-    
+    </>
     
   )
 }

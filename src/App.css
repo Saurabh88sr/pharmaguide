@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -57,11 +58,12 @@
 }
 
 .card-icon {
-  padding: 20px;
-  border-radius: 20px;
+  padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: auto;
   text-align: center;
+  border:2px solid rgb(174, 189, 207);
+  background-color: white;
 }
 
 .text {
@@ -70,6 +72,7 @@
 }
 .headBg{
   background-color: rgb(13, 53, 102);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   color: white;
   padding: 3px;
 }
@@ -89,7 +92,10 @@
 .cardcolor{
   background-color: white;
   color: rbg(32,33,36);
+  border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  border:5px solid rgb(174, 189, 207);
+
 
 }
 

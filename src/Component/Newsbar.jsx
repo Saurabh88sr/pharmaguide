@@ -7,7 +7,7 @@ import News from "./News";
 export class Newsbar extends Component {
   render() {
     return (
-      <div className="bg-light">
+      <div className="bg-light p-3">
         <h4 className="board">To News Headline</h4>
         <Container>
           <Row>
