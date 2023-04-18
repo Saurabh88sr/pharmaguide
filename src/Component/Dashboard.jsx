@@ -26,7 +26,7 @@ const Dashboard =()=>{
           <Card feature="Medicine by Condition" imageSrc="img\syringe.png" src={Condition} alt="My Image" />
         </div>
         <div className="board-row">
-          <Card feature="Drug Identifier " imageSrc="img\syringe.png" src={pill} alt="My Image"/>
+        <a className="nav-link" href='/Identifier'><Card feature="Drug Identifier " imageSrc="img\syringe.png" src={pill} alt="My Image"/></a>
           <a className="nav-link" href='/FAQ'><Card feature="Question & Answer" imageSrc="img\syringe.png" src={Feedback} alt="My Image" /></a>
           
         </div>

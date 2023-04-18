@@ -10,8 +10,10 @@ import Dashboard from "./Component/Dashboard";
 import MyList from "./Pages/MyList/MyList";
 import FAQ from "./Pages/FQA/FAQ";
 import QuestionForm from "./Pages/FQA/QuestionForm";
+import Identifier from "./Pages/Identifier/Identifier";
 
 function App() {
+
   return (
 
     <>
@@ -26,11 +28,8 @@ function App() {
           <Route  path="/MyList" element={<MyList />}></Route>
           <Route path="/FAQ" element={<FAQ/>}></Route>
           <Route path="/QuestionForm" element={<QuestionForm/>}></Route>
-          
-
-
-
-
+          <Route path= "/Identifier" element={<Identifier/>}></Route>
+        
         </Routes>
       </Router>
       

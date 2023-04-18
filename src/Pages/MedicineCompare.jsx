@@ -3,11 +3,9 @@ import SearchBar from "../Component/SearchBar";
 import { useState } from "react";
 
 const MedicineCompare = () => {
-  const [input, setInput]= useState("come");
-  
-  if ( input ===setInput){
-    console.log("right");
-  }
+  const [input, setInput]= useState("");
+  const a= "medicine";
+  console.log(document.getElementById("come"))
 
   return (
     <>
@@ -15,9 +13,9 @@ const MedicineCompare = () => {
       <h1>My favorite color is {input}!</h1>
       <button
         type="button"
-        onClick={() => setInput("blue")}
+        onClick={() => setInput(a)}
       >Blue</button>
-      <input type="text" id="come"  />
+      <input type="text" id="come" />
       <Container>
         <Row>
           <Col>
