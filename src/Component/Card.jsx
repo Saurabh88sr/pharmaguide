@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <div className="card-box ">
+    <div className="card-box">
       <div className="card-icon cardcolor ">
       <img src={props.src}  alt={props.alt} />
         	  <div className="text">

@@ -32,7 +32,7 @@ const Dashboard =()=>{
         </div>
         <div className="board-row">
         <a className="nav-link" href='/MyList'><Card feature="My Medicine List" src={List} alt="My Image" medicines={medicines}/></a>
-          <Card feature="Health News" imageSrc="img\syringe.png" src={News} alt="My Image"/>
+        <a className="nav-link" href='/MainNews'><Card feature="Health News" imageSrc="img\syringe.png" src={News} alt="My Image"/></a>
         </div>
       </div>
       <Newsbar />

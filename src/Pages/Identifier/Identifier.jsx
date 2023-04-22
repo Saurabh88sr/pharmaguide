@@ -4,8 +4,10 @@ import { Row, Col } from "react-bootstrap";
 const Identifier = () => {
   return (
     <>
-      <SearchMed />
-      <div className="container w-75">
+    <div className="bg-light">
+    <SearchMed />
+    </div>
+      <div className="container mt-4 w-75">
         <Row className="mt-2">
           <Col>
             <div class="grid text-center card-box card-icon">

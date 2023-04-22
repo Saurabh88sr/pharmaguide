@@ -11,6 +11,7 @@ import MyList from "./Pages/MyList/MyList";
 import FAQ from "./Pages/FQA/FAQ";
 import QuestionForm from "./Pages/FQA/QuestionForm";
 import Identifier from "./Pages/Identifier/Identifier";
+import MainNews from "./Pages/News/MianNews";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}></Route>
           <Route path="/QuestionForm" element={<QuestionForm/>}></Route>
           <Route path= "/Identifier" element={<Identifier/>}></Route>
+          <Route path="/MainNews" element={<MainNews/>}></Route>
         
         </Routes>
       </Router>
