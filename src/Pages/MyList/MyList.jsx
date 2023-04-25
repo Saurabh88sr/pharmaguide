@@ -18,6 +18,10 @@ const MyList = () => {
                   Medicine
                   <span className="badge bg-primary rounded-pill">2</span>
                 </li>
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                  News
+                  <span className="badge bg-primary rounded-pill">2</span>
+                </li>
               </ul>
             </Col>
             <Col>
@@ -61,7 +65,6 @@ const MyList = () => {
                     fugiat.
                   </p>
                 </li>
-                
               </ul>
             </Col>
           </Row>

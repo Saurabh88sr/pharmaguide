@@ -27,7 +27,7 @@ const MainNews = () => {
               />            
             
           </div>
-        ))};
+        ))}
       </div>
     </div>
   );

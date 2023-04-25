@@ -1,112 +1,60 @@
-// import { Container, Row, Col } from "react-bootstrap";
-// import SearchBar from "../Component/SearchBar";
+import React, {  useState } from 'react';
+import axios from 'axios';
 
-// const MedicineCompare = () => {
+function MedicineCompare() {
+  const [data, setData] = useState([]);
+  const[drugName, setDrugName] = useState("Advil");
 
-//   return (
-//     <>
-//       <SearchBar />
-//       <h1>My favorite color is {"g"}</h1>
-
-//       <Container>
-//         <Row>
-//           <Col>
-//             <table className="table table-bordered">
-//               <thead className="headBg">
-//                 <tr>
-//                   <th scope="col" k>
-//                     {"efef"}
-//                   </th>
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td>{"input"}</td>
-//                 </tr>
-//                 <tr>
-//                   <td>kkkk</td>
-//                 </tr>
-//                 <tr>
-//                   <td>@twitter</td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </Col>
-
-//           <Col>
-//             <table className="table">
-//               <thead className="headBg">
-//                 <tr>
-//                   <th scope="col">Handle</th>
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td>@mdo</td>
-//                 </tr>
-//                 <tr>
-//                   <td>@fat</td>
-//                 </tr>
-//                 <tr>
-//                   <td>@twitter</td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </Col>
-//           <div className="w-25">
-//             <Col>
-//               <table className="table table-bordered">
-//                 <thead className="headBg">
-//                   <tr>
-//                     <th scope="col">First</th>
-//                   </tr>
-//                 </thead>
-//                 <tbody>
-//                   <tr>
-//                     <td>Otto</td>
-//                   </tr>
-//                   <tr>
-//                     <td>Thornton</td>
-//                   </tr>
-//                 </tbody>
-//               </table>
-//             </Col>
-//           </div>
-//         </Row>
-//       </Container>
-//     </>
-//   );
-// };
-
-// export default MedicineCompare;
-
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-const MedicineCompare = () => {
-  const [newsData, setNewsData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=6f7b8b848da34cd094c4f107920e6b44"
-      );
-      setNewsData(response.data.articles);
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const options = {
+        method: 'GET',
+        url: 'https://drug-info-and-price-history.p.rapidapi.com/1/druginfo',
+        params: { drug: drugName },
+        headers: {
+          'content-type': 'application/octet-stream',
+          'X-RapidAPI-Key': '4fd660d289msh63b67201ed3a818p185564jsnb5cd3f16dcc6',
+          'X-RapidAPI-Host': 'drug-info-and-price-history.p.rapidapi.com'
+        }
+      };
+      try {
+        const response = await axios.request(options);
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
-    fetchData();
-  }, []);
 
   return (
     <div>
-      <h1>Latest News</h1>
-      {newsData.map((news) => (
-        <div key={news.title}>
-          <h2>{news.title}</h2>
-          <p>{news.description}</p>
-        </div>
-      ))}
+      <h1>Advil Drug Information</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="drugName">Enter Name:</label>
+        <input type="text" id='drugName' value={drugName} onChange={(event)=> setDrugName(event.target.value)}/>
+        <button type='submit'>sesrch</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Generic Name</th>
+            <th>Brand Name</th>
+            <th>Description</th>
+            <th>Drug Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index,) => (
+            <tr key={index}>
+              <td>{item.generic_name}</td>
+              <td>{item.BrandName}</td>
+              <td>{item.Description}</td>
+              <td>{item.labeler_name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-};
+}
 
 export default MedicineCompare;
