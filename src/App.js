@@ -31,7 +31,6 @@ function App() {
           <Route path="/QuestionForm" element={<QuestionForm/>}></Route>
           <Route path= "/Identifier" element={<Identifier/>}></Route>
           <Route path="/MainNews" element={<MainNews/>}></Route>
-        
         </Routes>
       </Router>
       

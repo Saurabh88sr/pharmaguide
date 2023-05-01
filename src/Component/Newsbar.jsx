@@ -16,7 +16,7 @@ const Newsbar = () => {
   return (
     <div className="container my-4">
       <h1 className="headBg">Top Headline</h1>
-      {!newsData ? (<div className="row">
+      {newsData ? (<div className="row">
         {newsData.map((news) => (
           <div className="col-md-3 p-2" key={news.title}>
               <News
