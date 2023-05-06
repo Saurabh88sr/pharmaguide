@@ -17,7 +17,7 @@ function Signup() {
   };
 
   return (
-    <div className="container mt-5 w-50 p-5 cardcolor">
+    <div className="container mt-5 w-50 p-5 cardcolor ">
       <h1 className="mb-4 text-dark">Signup</h1>
       {showPasswordError && (
         <Alert variant="danger" onClose={() => setShowPasswordError(false)} dismissible>

@@ -1,4 +1,4 @@
-const ListDesk = () => {
+const ListDesk = (props) => {
   return (
     <>
       <div className="container mt-3 p-2">
@@ -8,7 +8,7 @@ const ListDesk = () => {
               <li className=" d-flex justify-content-between align-items-center">
                 <div className="">
                   {" "}
-                  <h3>UserName</h3>{" "}
+                  <h3>{props.name}</h3>{" "}
                 </div>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">

@@ -1,7 +1,7 @@
 const DrugTable = (props) => {
   return (
     <>
-      <div className="container justify-content-md-center bg-light w-75">
+      <div className="container justify-content-md-center">
         <ul className="list-group">
           <li className="list-group-item justify-content-between align-items-center">
             <div className="headBg  ">
@@ -10,6 +10,10 @@ const DrugTable = (props) => {
             <li className="list-group-item  justify-content-between align-items-center">
               <div className="drugInfoTag bg-primary">Generic Name</div>
               <p className="text-dark p-1">{props.genrName}</p>
+            </li>
+            <li className="list-group-item  justify-content-between align-items-center">
+              <div className="drugInfoTag bg-primary">Price</div>
+              <p className="text-dark p-1">{props.price}</p>
             </li>
             <li className="list-group-item  justify-content-between align-items-center">
               <div className="drugInfoTag bg-primary">Dogse Form</div>

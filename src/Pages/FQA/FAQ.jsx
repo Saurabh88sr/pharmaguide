@@ -77,7 +77,7 @@ function FQA() {
     </Container>
     <div className="card-icon card-box fixed-bottom">
     
-    <h5>Did not find what you were looking for? <button type="text" className="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <h5>Did not find what you were looking for? <button type="text" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <a href="/QuestionForm"> Ask a Question</a></button> </h5>
     
   </div>

@@ -1,4 +1,3 @@
-import SearchBar from "./SearchBar";
 import Card from "./Card";
 import Footer from "./Footer";
 import Newsbar from "./Newsbar";
@@ -19,7 +18,10 @@ const Dashboard =()=>{
   ];
     return(
         <>
-      <SearchBar />
+        <div id="mySidenav" className="sidenav">
+          <a href="/BMI" id="about">BMI</a>
+  
+</div>
       <div className="board">
         <div className="board-row">
         <a className="nav-link" href='/MedicineCompare'><Card feature="Medicine Compare" src={Compare} alt="My Image" medicines={medicines}/></a>

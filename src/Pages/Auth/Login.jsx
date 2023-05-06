@@ -2,7 +2,7 @@ import React from 'react'
 
 const Login = () => {
   return (
-<div class="container w-50 p-5 mt-4 cardcolor">
+<div class="container w-50 p-5 mt-4 cardcolor ">
 <div class="container mt-5 ">
       <h1 class="mb-4 text-dark">Login</h1>
       <form method="post" action="/signup">

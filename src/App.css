@@ -42,6 +42,13 @@
   padding: 25px;
 }
 
+.background{
+  background-image: url(./img/background.jpg);
+  /* background-attachment:fixed; */
+  background-position: bottom;
+  
+}
+
 .board {
   display: flex;
   flex-wrap: wrap;
@@ -57,6 +64,7 @@
 }
 
 .card-icon {
+  
   padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: auto;
@@ -119,4 +127,26 @@
   font-weight:500;
   color:white;
 
+}
+
+#mySidenav a {
+  margin-top: 70px;
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 110px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 8px 8px 0;
+}
+#mySidenav a:hover {
+  left: 0px;
+  border-radius: 0 0px 0px 0;
+
+}
+#about {
+  top: 20px;
+  background-color: #44685b;
 }

@@ -2,7 +2,15 @@ import { useState } from "react";
 import Medlist from "./Medlist";
 import Newslist from "./Newslist";
 
+
+
 const MyList = () => {
+  // useEffect(() => {
+  //   console.log(name)
+    
+  // });
+
+
   const [showMedList, setShowMedList] = useState(true);
   const [showNewsList, setShowNewsList] = useState(false);
 
@@ -15,6 +23,8 @@ const MyList = () => {
     setShowMedList(false);
     setShowNewsList(true);
   }
+
+
   return (
     <>
       <div className="container mt-3 p-2">
@@ -24,17 +34,17 @@ const MyList = () => {
               <li className=" d-flex justify-content-between align-items-center">
                 <div className="">
                   {" "}
-                  <h3>UserName</h3>{" "}
+                  <h3>username</h3>{" "}
                 </div>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <button type="button" class="btn" onClick={handleMedListClick}>
+                <button type="button" className="btn" onClick={handleMedListClick}>
                   Medicine
                 </button>
                 <span className="badge bg-primary rounded-pill">2</span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <button type="button" class="btn" onClick={handleNewsListClick}>
+                <button type="button" className="btn" onClick={handleNewsListClick}>
                   News
                 </button>
                 <span className="badge bg-primary rounded-pill">2</span>
