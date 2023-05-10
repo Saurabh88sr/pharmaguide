@@ -70,7 +70,7 @@ function MedicineCompare() {
   return (
     <div>
       <div className="container justify-content-md-center  ">
-        <h1 className="p-2">Compare Your Medicine</h1>
+        <h1 className="p-3">Compare Your Medicine</h1>
         <div className=" d-flex mb-4">
           <Form onSubmit={handleSubmit} className="ms-5 w-100">
           <Button variant="dark" type="submit" className="mb-2">
@@ -102,7 +102,7 @@ function MedicineCompare() {
             
           </Form>
         </div>
-        <div className="justify-content-md-center d-flex">
+        <div className="justify-content-md-center d-flex ">
           {data.map((item, index) => (
             <div key={index} className=" d-flex">
                 <GenericTable />

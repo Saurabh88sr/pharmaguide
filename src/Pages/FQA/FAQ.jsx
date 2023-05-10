@@ -8,6 +8,7 @@ function FQA() {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
 
+
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
@@ -24,6 +25,7 @@ function FQA() {
     // const chatResponse = response.data;
     // setMessages([...messages, chatResponse]);
   };
+ 
 
   return (
     <>
@@ -34,6 +36,9 @@ function FQA() {
             Have a Question? Search for Answer First
           </h1>
           <Form onSubmit={handleFormSubmit}>
+          <Button variant="dark" type="submit" className="mb-2 mt-2">
+              Search
+            </Button>
             <Form.Group>
               <Form.Control
                 type="text"
@@ -42,9 +47,7 @@ function FQA() {
                 placeholder="Type your message here"
               />
             </Form.Group>
-            <Button variant="dark" type="submit" className="mb-5 mt-2">
-              Submit
-            </Button>
+            
           </Form>
           <ListGroup className="mb-5">
             {messages.map((message, index) => (
@@ -77,8 +80,8 @@ function FQA() {
     </Container>
     <div className="card-icon card-box fixed-bottom">
     
-    <h5>Did not find what you were looking for? <button type="text" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <a href="/QuestionForm"> Ask a Question</a></button> </h5>
+    <h5>Did not find what you were looking for? <button type="text" className="btn">
+    <a href="/QuestionForm" > Ask a Question</a></button> </h5>
     
   </div>
   </>

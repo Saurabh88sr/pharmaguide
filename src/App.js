@@ -13,6 +13,7 @@ import Identifier from "./Pages/Identifier/Identifier";
 import MainNews from "./Pages/News/MianNews";
 import MedicineCompare from "./Pages/MedCompare/MedicineCompare";
 import BMI from "./Pages/MedCompare/BMI";
+import DrugSearch from "./Pages/DrugCondition/DrugSearch";
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
           <Route path= "/Identifier" element={<Identifier/>}></Route>
           <Route path="/MainNews" element={<MainNews/>}></Route>
           <Route path="/BMI" element={<BMI/>}></Route>
+          <Route path="/DrugSearch" element={<DrugSearch/>}></Route>
+
+
 
         </Routes>
       </Router>

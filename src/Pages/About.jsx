@@ -1,139 +1,65 @@
-import React, { useState } from 'react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
 
+const News = ({ title, description, Imgurl, newsurl }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [updatedTitle, setUpdatedTitle] = useState(title);
+  const [updatedDescription, setUpdatedDescription] = useState(description);
 
-function About() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-    const items = [
-      {
-        id: 0,
-        name: 'Cobaol'
-      },
-      {
-        id: 1,
-        name: 'paracitamal'
-      },
-      {
-        id: 2,
-        name: 'advil'
-      },
-      {
-        id: 3,
-        name: 'PaHP'
-      },
-      {
-        id: 4,
-        name: 'ramm'
-      },
-      {
-        id: 5,
-        name: 'apple'
-      },
-      {
-        id: 6,
-        name: 'dgfaff'
-      },
-      {
-        id: 7,
-        name: 'rema'
-      },
-      {
-        id: 8,
-        name: 'sam'
-      },
-      {
-        id: 9,
-        name: 'cacpple'
-      },
-      {
-        id: 10,
-        name: 'reccdgfaff'
-      },
-      {
-        id: 11,
-        name: 'menrema'
-      },
-      {
-        id: 12,
-        name: 'java'
-      },
-      {
-        id: 13,
-        name: 'saurabh'
-      },
-      {
-        id: 14,
-        name: 'verma'
-      },
-      {
-        id: 15,
-        name: 'varanasi'
-      },
-      {
-        id: 16,
-        name: 'india'
-      }
-    ]
-    // Your item list here
-
-  const handleOnSearch = (string, results) => {
-    setSearchTerm(string);
-    console.log(string, results);
+  const handleEdit = () => {
+    setIsEditing(true);
   };
 
-  const handleOnHover = (result) => {
-    console.log(result);
+  const handleUpdate = () => {
+    // Perform the update operation using updatedTitle and updatedDescription
+    // For example, you can make an API call to update the news item
+    // After the update is successful, you can set isEditing back to false
+    setIsEditing(false);
   };
 
-  const handleOnSelect = (item) => {
-    console.log(item);
+  const handleCancel = () => {
+    setIsEditing(false);
+    // Reset the updatedTitle and updatedDescription back to their original values
+    setUpdatedTitle(title);
+    setUpdatedDescription(description);
   };
 
-  const handleOnFocus = () => {
-    console.log('Focused');
-  };
-
-  const formatResult = (item) => {
-    return (
-      <>
-        <span style={{ display: 'block', textAlign: 'left' }}>{item.name}</span>
-      </>
-    );
-  };
-
-  const handleSearch = () => {
-    // Perform search or any other logic here
-    console.log('Search term:', searchTerm);
+  const handleRemove = () => {
+    // Perform the remove operation
+    // For example, you can make an API call to delete the news item
+    // After the removal is successful, you can handle any necessary cleanup
+    console.log("Remove operation");
   };
 
   return (
-    <div className="App">
-    <header className="App-header ">
-    <Form onSubmit={handleSearch} className="ms-5 w-100">
-          <Button variant="dark" type="submit" className="mb-2">
-              Search for Compare
-            </Button>
-            <Form.Group >
-            <ReactSearchAutocomplete
-            items={items}
-            onSearch={handleOnSearch}
-            onHover={handleOnHover}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-            formatResult={formatResult}
+    <div className="news-card">
+      {isEditing ? (
+        <div>
+          <input
+            type="text"
+            value={updatedTitle}
+            onChange={(e) => setUpdatedTitle(e.target.value)}
           />
-            </Form.Group>
-
-            
-          </Form>
-        
-
-      </header>
+          <textarea
+            value={updatedDescription}
+            onChange={(e) => setUpdatedDescription(e.target.value)}
+          ></textarea>
+          <button onClick={handleUpdate}>Update</button>
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
+      ) : (
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <img src={Imgurl} alt="News" />
+          <a href={newsurl} target="_blank" rel="noopener noreferrer">
+            Read More
+          </a>
+          <button onClick={handleEdit}>Edit</button>
+          <button onClick={handleRemove}>Remove</button>
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default About;
+export default News;

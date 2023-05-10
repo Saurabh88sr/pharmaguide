@@ -1,5 +1,9 @@
+import { useState } from "react";
+import { saveNews, removeNews } from "../Pages/News/NewsStorage";
 
 const News = (props) => {
+  const [saved, setSaved] = useState(false);
+
   // const [newsData, setNewsData] = useState([]);
 
   // useEffect(() => {
@@ -11,6 +15,25 @@ const News = (props) => {
   //   };
   //   fetchData();
   // }, []);
+  
+  const handleSaveToggle = () => {
+    setSaved(!saved);
+    if (!saved) {
+      saveNews(props);
+    } else {
+      removeNews(props);
+    }
+  };
+  
+  // const saveNws = () => {
+  //   // Perform save news operation here
+  //   console.log("News saved:", props.title);
+  // };
+
+  // const removeews = () => {
+  //   // Perform unsave news operation here
+  //   console.log("News unsaved:", props.title);
+  // };
 
   return (
     <>
@@ -23,6 +46,9 @@ const News = (props) => {
             <a href={props.newsurl} target="blank" class="btn btn-sm btn-dark">
               Read More
             </a>
+            <button className="btn btn-sm btn-primary" onClick={handleSaveToggle}>
+            {saved ? "Unsave" : "Save"}
+          </button>
           </div>
         </div>
     </>
