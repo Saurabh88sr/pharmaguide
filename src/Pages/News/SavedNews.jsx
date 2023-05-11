@@ -27,6 +27,9 @@ const SavedNews = () => {
         <div key={news.id}>
           <h3>{news.title}</h3>
           <p>{news.description}</p>
+          <a href={news.newsurl} target="blank" class="btn btn-sm btn-dark">
+              Read More
+            </a>
           <button onClick={() => handleUnsave(news.id)}>Unsave</button>
         </div>
       ))}

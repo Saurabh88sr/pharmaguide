@@ -73,10 +73,10 @@ function MedicineCompare() {
         <h1 className="p-3">Compare Your Medicine</h1>
         <div className=" d-flex mb-4">
           <Form onSubmit={handleSubmit} className="ms-5 w-100">
-          <Button variant="dark" type="submit" className="mb-2">
+            <Button variant="dark" type="submit" className="mb-2">
               Medicine Search
             </Button>
-            <Form.Group >
+            <Form.Group>
               <Form.Control
                 type="text"
                 value={drugName}
@@ -84,13 +84,12 @@ function MedicineCompare() {
                 placeholder="Type your Medicine here"
               />
             </Form.Group>
-            
           </Form>
           <Form onSubmit={handleGenr} className="ms-5 w-100">
-          <Button variant="dark" type="submit" className="mb-2">
+            <Button variant="dark" type="submit" className="mb-2">
               Search for Compare
             </Button>
-            <Form.Group >
+            <Form.Group>
               <Form.Control
                 type="text"
                 value={genrName}
@@ -98,14 +97,19 @@ function MedicineCompare() {
                 placeholder="Type your Medicine here"
               />
             </Form.Group>
-
-            
           </Form>
         </div>
+        <ul>
+            {data.map((item, index) => (
+              <div key={index}>
+                <p>{item.generic_name}</p>
+              </div>
+            ))}
+          </ul>
         <div className="justify-content-md-center d-flex ">
           {data.map((item, index) => (
             <div key={index} className=" d-flex">
-                <GenericTable />
+              <GenericTable />
               <DrugTable
                 name={item.name}
                 genrName={item.generic_name}
